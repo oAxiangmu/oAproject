@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="UTF-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#add").on("click",function(){
+					console.log($(":radio").length)
+					console.log($("#add"))
+				})
+				$("#view").on("click",function(){
+					console.log($("select option:selected").length);
+//					for(var i=0;i<$(":selected").length;i++){
+//						console.log($(":selected")[i].val())
+//					}
+                 console.log($(":selected").val())
+				})
+			})
+		</script>
+		
+	</head>
+	<body>
+		<input type="text" name="" id="" value="" />
+		<input type="password" name="" id="" value="" />
+		<input type="button" name="" id="add" value="增加" /><br>
+		<select id="se" size="5" multiple="multiple">
+			<option value="1">4</option>
+			<option value="2">5</option>
+			<option value="3">6</option>
+			<option value="4">7</option>
+			<option value="5">8</option>
+		</select>
+		<select id="se" size="5" multiple="multiple">
+			<option value="1">9</option>
+			<option value="2">5</option>
+			<option value="3">6</option>
+			<option value="4">7</option>
+			<option value="5">8</option>
+		</select>
+		<input type="button" name="" id="view" value="查看" />
+	</body>
+</html>
