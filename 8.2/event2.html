@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById("btn1").onclick = function() {
+					var newBtn = document.createElement("input");
+					newBtn.type = "button";
+					newBtn.value = "NewBtn";
+					newBtn.className = "btn";
+					//newBtn.onclick=test;
+					document.body.appendChild(newBtn);
+				}
+				document.onclick = function(e) {
+					if(e.target.className == "btn") {
+						test();
+					}
+				}
+
+//				var btns = document.getElementsByClassName("btn");
+//				for(var i = 0; i < btns.length; i++) {
+//					btns[i].onclick = test;
+//				}
+			}
+
+			function test() {
+				alert(1);
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="button" id="btn1" value="btn1" />
+		<input type="button" class="btn" value="btn2" />
+	</body>
+
+</html>
