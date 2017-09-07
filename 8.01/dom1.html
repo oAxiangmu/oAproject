@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function init() {
+				var name = document.getElementById("name");
+//				console.log(name);
+//
+//				console.log(name.nodeType);
+//				console.log(name.nodeValue);
+//				console.log(name.nodeName);
+				
+				document.getElementById("delBtn").onclick=function(){
+					
+					document.body.removeChild(name);
+				}
+				document.getElementById("addBtn").onclick=function(){
+					var newInput=document.createElement("input");
+					newInput.type="checkbox";
+					
+					var delBtn=document.getElementById("delBtn");
+					document.body.insertBefore(newInput,delBtn);
+				}
+			}
+		</script>
+	</head>
+
+	<body onload="init()">
+		
+		<input type="text" name="name" id="name" value="11" />
+		<input type="button" name="" id="delBtn" value="删除" />
+		<input type="button" name="" id="addBtn" value="新增" />
+	</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#menuDiv {
+				width: 100px;
+				height: 100px;
+				border: 1px red solid;
+				position: absolute;
+				display: none;
+				background: white;
+			}
+			
+			#menus {
+				list-style: none;
+				padding: 0;
+			}
+			
+			a {
+				display: block;
+			}
+			
+			li {
+				width: 100px
+			}
+		</style>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//$("#all").prop("indeterminate",true);
+				$("#all").on("click",function(){
+					$("[name=ids]").prop("checked",$(this).prop("checked"))
+				});
+//				$("[name=ids]").on("click",function(){
+//					
+//					if($("[name=ids]").prop("checked")==true){
+//						$("#all").prop("checked",true);
+//					}
+//					if($("[name=ids]").prop("checked")==false){
+//						$("#all").prop("checked",false)
+//					}
+//					if($("[name=ids]:checked").length<$("[name=ids]").length&&$("[name=ids]:checked").length>0){
+//						$("#all").prop("indeterminate",true);
+//					}
+//				
+                $("[name=ids]").on("click",function(){
+                	if($("[name=ids]:checked").length==0){
+                		$("#all").prop("indeterminate",false);
+                		$("#all").prop("checked",false);
+                	}else if($("[name=ids]:checked").length==$("[name=ids]").length){
+                		$("#all").prop("indeterminate",false);
+                		$("#all").prop("checked",true);
+                	}else{
+                		$("#all").prop("indeterminate",true);
+                	}
+				})
+			});
+			//任务：
+			//1，在name=ids的复选框上加事件
+			//2，如果点击其中一个下拉框，
+			//2.1 假如全部是选中状态，全选下拉框自动选中
+			//2.2假如全部是未选中状态，全选下拉框自动不选中
+			//2.3 如果是部分选中状态，全选下拉框是半选中状态
+		</script>
+	</head>
+
+	<body>
+		<table border="1" width="40%">
+			<tr>
+				<td><input type="checkbox" id="all" />全选</td>
+				<td>姓名</td>
+				<td>操作</td>
+			</tr>
+			<tr class="c1">
+				<td><input type="checkbox" name="ids" value="1" /></td>
+				<td>Tom</td>
+				<td><img src="img/down.jpg" class="down"> </td>
+			</tr>
+			<tr class="c1">
+				<td><input type="checkbox" name="ids" value="2" /></td>
+				<td>Jack</td>
+				<td><img src="img/down.jpg" class="down"> <img src="img/up.jpg" class="up"> </td>
+			</tr>
+			<tr class="c1">
+				<td><input type="checkbox" name="ids" value="3" /></td>
+				<td>Rose</td>
+				<td><img src="img/down.jpg" class="down"> <img src="img/up.jpg" class="up"></td>
+			</tr>
+			<tr class="c1">
+				<td><input type="checkbox" name="ids" value="4" /></td>
+				<td>Tim</td>
+				<td><img src="img/up.jpg" class="up"></td>
+			</tr>
+		</table>
+		<input type="button" id="delBtn" value="删除" />
+		<div id="menuDiv">
+			<ul id="menus">
+				<li>
+					<a href="">上移</a>
+				</li>
+				<li>
+					<a href="">下移</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" id="edit">修改</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" id="del">删除</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

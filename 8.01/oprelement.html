@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<table id="table1">
+			<tr>
+				<td>Test</td>
+			</tr>
+			
+		</table>
+		<select size="10">
+			
+		</select>
+		<input type="button" value="增加" onclick="addRow()"/>
+	</body>
+	<script type="text/javascript">
+		var newDiv = document.createElement("div");
+		newDiv.innerText = "Hello";
+		console.log(newDiv);
+		console.log(document.body.appendChild(newDiv));
+		
+		function addRow(){
+			var newTr=document.createElement("tr");
+			var newTd=document.createElement("td");
+			newTd.innerText="TD1";
+			newTr.appendChild(newTd);
+			document.querySelector("#table1>tbody").appendChild(newTr);
+		}
+		
+		//document.removeChild()
+	</script>
+
+</html>

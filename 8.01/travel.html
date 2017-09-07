@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function init() {
+				var div12 = document.getElementById("div12");
+				console.log(div12.parentElement);
+				console.log(div12.parentNode);
+
+				var div1 = document.getElementById("div1");
+				console.log(div1.childElementCount);
+				console.log(div1.childNodes.length);
+				for(var i = 0; i < div1.childNodes.length; i++) {
+					console.log(div1.childNodes[i].nodeType);
+				}
+				console.log(div1.children.length);
+
+				//找div1的兄弟
+				console.log(div1.nextElementSibling.id);
+				console.log(div1.nextSibling.nextSibling);
+				console.log(div1.previousElementSibling);
+				console.log(div1.previousSibling.previousSibling);
+				
+			}
+		</script>
+	</head>
+
+	<body onload="init()">
+		<div id="div1">
+			<div id="div11">
+				11
+			</div>121
+			<div id="div12">
+				12
+			</div>
+		</div>
+		<div id="div2">
+			<div id="div21">
+				21
+			</div>
+			<div id="div22">
+				22
+			</div>
+		</div>
+		<div id="div3">
+			<div id="div31">
+				21
+			</div>
+			<div id="div32">
+				22
+			</div>
+		</div>
+	</body>
+
+</html>
