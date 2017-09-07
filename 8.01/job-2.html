@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			     $(function(){
+			     	$("#all").on("click",function(){
+			     		
+			         $("[name=ids]").prop("checked",$("#all").prop("checked"))
+			     	});
+			     })
+
+		</script>
+		<style type="text/css">
+			#menuDiv {
+				width: 100px;
+				height: 100px;
+				border: 1px red solid;
+				position: absolute;
+				display: none;
+				background: white;
+			}
+			
+			#menus {
+				list-style: none;
+				padding: 0;
+			}
+			
+			a {
+				display: block;
+			}
+			
+			li {
+				width: 100px
+			}
+		</style>
+	</head>
+
+	<body>
+		<table border="1" width="40%">
+			<tr>
+				<td><input type="checkbox" id="all" />全选</td>
+				<td>姓名</td>
+				<td>操作</td>
+			</tr>
+			<tr class="c1">
+				<td><input type="checkbox" name="ids" value="1" /></td>
+				<td>Tom</td>
+				<td><img src="img/down.jpg" class="down"> </td>
+			</tr>
+			<tr class="c1">
+				<td><input type="checkbox" name="ids" value="2" /></td>
+				<td>Jack</td>
+				<td><img src="img/down.jpg" class="down"> <img src="img/up.jpg" class="up"> </td>
+			</tr>
+			<tr class="c1">
+				<td><input type="checkbox" name="ids" value="3" /></td>
+				<td>Rose</td>
+				<td><img src="img/down.jpg" class="down"> <img src="img/up.jpg" class="up"></td>
+			</tr>
+			<tr class="c1">
+				<td><input type="checkbox" name="ids" value="4" /></td>
+				<td>Tim</td>
+				<td><img src="img/up.jpg" class="up"></td>
+			</tr>
+		</table>
+		<input type="button" id="delBtn" value="删除" />
+		<div id="menuDiv">
+			<ul id="menus">
+				<li>
+					<a href="">上移</a>
+				</li>
+				<li>
+					<a href="">下移</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" id="edit">修改</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" id="del">删除</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>
