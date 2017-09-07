@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var xhr;
+			window.onload=function(){
+//			document.getElementById("name").onblur=function(){
+//				xhr=new XMLHttpRequest();
+//				xhr.open("get","checkname?name="+this.value);//第一个参数是方法，第二个是url,checkname指的是和服务器一样的文件名地址，name是参数必须和服务器一致=文本框输入的值用字符串的形式发送过去
+//				xhr.onreadystatechange=process;
+//				xhr.send();
+//			 }
+			document.getElementById("name").onblur=function(){
+				xhr=new XMLHttpRequest();
+				xhr.open("post","users.json");
+				xhr.onreadystetechange=process;
+				xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xhr.send("name="+this.value);//传入发送的数据
+			}
+			}
+			function process(){
+				if(xhr.readyState==4&&xhr.status==200){
+					if(xhr.responseText=="true"){//服务器规定的比较规则
+						document.getElementById("names").innerHTML="该用户名已经被注册"
+					}else{
+						document.getElementById("names").innerHTML="恭喜你注册成功"
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form action="" name="regform" id="regform">
+			<input type="text" name="name" id="name" value="" /><span id="names"></span><br />
+			<input type="password" name="password" id="password" value="" /><span id="pwd"></span>
+			<input type="submit" value="登录"/>
+		</form>
+	</body>
+</html>
