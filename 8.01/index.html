@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+		<style type="text/css">
+			.c2{
+				border:1px red solid;
+			}
+			.user{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		输入：<input type="text" name="username" id="username" value="tom"  />
+		<input type="password" name="password" id="password" value="" /><br />
+		<input type="checkbox" name="favor" value="1" />足球
+		<input type="checkbox" name="favor" value="2" />篮球
+		<input type="checkbox" name="favor" value="3" checked="checked"/>排球
+		<div class="c1">1</div>
+		<div id="div2">
+			<table>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+				</tr>
+			</table>
+			
+		</div>
+		<div class="c1">3</div>
+		<table></table>
+		<p></p>
+		<input type="button" value="测试" onclick="test()"/>
+		<input type="button" value="删除" onclick="del()"/>
+		<script type="text/javascript">
+			
+			console.log(document);
+			console.log(document instanceof  HTMLDocument);
+			console.log(document.getElementById("username").value);
+			console.log(document.getElementsByName("favor"));
+			console.log(document.getElementsByName("favor").length);
+			var us=document.getElementById("username");
+			 //us.className="c2";
+				console.log(us);
+			
+			var fa=document.getElementsByName("favor");
+			
+			
+				console.log(fa.value);
+			
+			var divs=document.getElementsByTagName("div");
+			
+			for(var i=0;i<divs.length;i++){
+				divs[i].className="user"
+			console.log(divs[i])
+			}
+			var tables=document.getElementsByTagName("table");
+			for(var i=0;i<tables.length;i++){
+			console.log(tables[i].innerHTML)
+			}
+			var ps=document.getElementsByTagName("p");
+			for(var i=0;i<ps.length;i++){
+				console.log(ps[i].innerText)
+			}
+			var divs2=document.getElementsByClassName("c1");
+			for(var i=0;i<divs2.length;i++){
+			console.log(divs2[i].innerText);
+			}
+			var username=document.querySelector("#username")
+			console.log(username)
+			var div3=document.querySelectorAll("div");
+			for(var i=0;i<div3.length;i++){
+				console.log(div3);
+			}
+			function test(){
+				var name=document.querySelector("#username");
+				name.value="jack";
+				name.onclick=function(){
+					name.className="c2";
+					
+				}
+				//console.log("name")
+				name.onclick();
+				var names=document.getElementsByName("favor");
+				for(var i=0;i<names.length;i++){
+					names[i].checked=true;
+				}
+			}
+			function del(){
+				var names=document.getElementsByName("favor");
+				for(var i=0;i<names.length;i++){
+					names[i].checked=false;
+				}
+			}
+			
+			var div2=document.querySelector("#div2");
+			console.log(div2.innerText);
+			console.log(div2.innerHTML);
+			div2.innerText="<img src='1.jpg' width='50'>"
+			
+		</script>
+	</body>
+</html>
